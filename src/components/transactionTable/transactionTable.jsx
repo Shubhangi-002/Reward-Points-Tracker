@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import PropTypes from 'prop-types';
 import { calculateRewardPoints } from '../../utils/rewardCalculator';
 import { TransactionContext } from '../../context/transactionContext';
 
@@ -40,5 +41,15 @@ function TransactionTable({ transactions }) {
     </div>
   );
 }
+
+TransactionTable.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      date: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      customerId: PropTypes.string // optional if not used in this component
+    })
+  ).isRequired
+};
 
 export default TransactionTable;
