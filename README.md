@@ -39,9 +39,10 @@ git clone https://github.com/Shubhangi-002/Reward-Points-Tracker.git
 cd Reward-Points-Tracker
 
 ## Working App Screenshot
-![App Screenshot](./public/assets/appScreenshot/Screenshot_1.png)
-![App Screenshot](./public/assets/appScreenshot/Screenshot_2.png)
-![App Screenshot](./public/assets/appScreenshot/Screenshot_3.png)
+![Screenshot 1](./assets/Screenshot_1.png)
+![Screenshot 2](./assets/Screenshot_2.png)
+![Screenshot 3](./assets/Screenshot_3.png)
+
 
 
 
