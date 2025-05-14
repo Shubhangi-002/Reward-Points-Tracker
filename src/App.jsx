@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
-import CustomerList from './components/customerList/customerList';
-import MonthFilter from './components/monthsFilter/monthsFilter';
-import CustomerDetails from './components/customerDetails/customerDetails';
+import CustomerList from './components/customerList';
+import MonthFilter from './components/monthsFilter';
+import CustomerDetails from './components/customerDetails';
 import { TransactionContext } from './context/transactionContext';
 import './styles/appStyles.css'
 

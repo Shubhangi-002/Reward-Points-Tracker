@@ -1,28 +1,46 @@
-import React, { createContext, useState, useEffect } from 'react';
+import { createContext, useState, useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
 import { fetchTransactions } from '../api/fetchTransactions';
 import { logger } from '../utils/logger';
 
-export const TransactionContext = createContext();
+const TransactionContext = createContext();
 
 export const TransactionProvider = ({ children }) => {
   const [transactions, setTransactions] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
-  const [selectedCustomer, setSelectedCustomer] = useState(null);
-  const [selectedMonth, setSelectedMonth] = useState(null);
-  const [selectedYear, setSelectedYear] = useState(2025);
+  const [selectedCustomer, setSelectedCustomerRaw] = useState(null);
+  const [selectedMonth, setSelectedMonthRaw] = useState(null);
+  const [selectedYear, setSelectedYearRaw] = useState(2025);
 
   useEffect(() => {
-    fetchTransactions()
-      .then(data => {
+    const loadTransactions = async () => {
+      setLoading(true);
+      try {
+        const data = await fetchTransactions();
         setTransactions(data);
         logger.info("Transactions loaded", data);
-      })
-      .catch(err => {
-        setError('Failed to load transactions');
-        logger.error("Transaction fetch Error", err);
-      })
-      .finally(() => setLoading(false));
+      } catch (err) {
+        setError("Failed to load transactions");
+        logger.error("Transaction fetch error:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadTransactions();
+  }, []);
+
+  const updateSelectedCustomer = useCallback((customer) => {
+    setSelectedCustomerRaw(customer);
+  }, []);
+
+  const updateSelectedMonth = useCallback((month) => {
+    setSelectedMonthRaw(month);
+  }, []);
+
+  const updateSelectedYear = useCallback((year) => {
+    setSelectedYearRaw(year);
   }, []);
 
   return (
@@ -32,14 +50,20 @@ export const TransactionProvider = ({ children }) => {
         loading,
         error,
         selectedCustomer,
-        setSelectedCustomer,
+        setSelectedCustomer: updateSelectedCustomer,
         selectedMonth,
-        setSelectedMonth,
+        setSelectedMonth: updateSelectedMonth,
         selectedYear,
-        setSelectedYear
+        setSelectedYear: updateSelectedYear
       }}
     >
       {children}
     </TransactionContext.Provider>
   );
 };
+
+TransactionProvider.propTypes = {
+  children: PropTypes.node.isRequired
+};
+
+export { TransactionContext };
