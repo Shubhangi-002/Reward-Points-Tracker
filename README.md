@@ -40,10 +40,11 @@ cd Reward-Points-Tracker
 
 ## Working App and Test case Screenshot
 
-<img width="100%" alt="App Screenshot 1" src="assets/Screenshot_1.png" />
-<img width="100%" alt="App Screenshot 2" src="assets/Screenshot_2.png" />
-<img width="100%" alt="App Screenshot 3" src="assets/Screenshot_3.png" />
-<img width="100%" alt="App Screenshot 4" src="assets/Screenshot_5.png" />
+![App Screenshot 1](assets/Screenshot_1.png)
+![App Screenshot 2](assets/Screenshot_2.png)
+![App Screenshot 3](assets/Screenshot_3.png)
+![App Screenshot 4](assets/Screenshot_5.png)
+
 
 
 
