@@ -18,7 +18,7 @@ function CustomerDetails() {
   
     filtered.forEach(({ date, amount }) => {
       const parsedDate = new Date(date);
-      const month = parsedDate.getMonth();
+      const month = parsedDate.getMonth() + 1;
       const year = parsedDate.getFullYear();
       const points = calculateRewardPoints(amount);
   
