@@ -43,6 +43,7 @@ cd Reward-Points-Tracker
 <img width="1440" alt="Image" src="https://github.com/user-attachments/assets/1374f41b-775e-484f-ac79-1839f67b163e" />
 <img width="1440" alt="Image" src="https://github.com/user-attachments/assets/4336efd5-8d3b-437a-a548-fab1115942d2" />
 <img width="1440" alt="Image" src="https://github.com/user-attachments/assets/d5de8b2e-7fa7-45f5-ba71-2d29656e2d94" />
+[![Screenshot-5.png](https://i.postimg.cc/90q1J1DJ/Screenshot-5.png)](https://postimg.cc/64tdQrLv)
 
 
 
