@@ -43,6 +43,9 @@ cd Reward-Points-Tracker
 ![Screenshot 2](./assets/Screenshot_2.png)
 ![Screenshot 3](./assets/Screenshot_3.png)
 
+## Test Cases Passed Screenshot
+![Screenshot 3](./assets/Screenshot_4.png)
+
 
 
 
