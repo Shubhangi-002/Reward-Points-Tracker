@@ -20,7 +20,7 @@ export const TransactionProvider = ({ children }) => {
       })
       .catch(err => {
         setError('Failed to load transactions');
-        logger.error("Transaction fetch error", err);
+        logger.error("Transaction fetch Error", err);
       })
       .finally(() => setLoading(false));
   }, []);
