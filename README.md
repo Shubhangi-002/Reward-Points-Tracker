@@ -1,4 +1,9 @@
+## Working App and Test case Screenshot
+
 ![image](https://github.com/user-attachments/assets/6a344854-df95-4319-aca5-b36c4e9f1b89)
+![App Screenshot 2](assets/Screenshot_2.png)
+![App Screenshot 3](assets/Screenshot_3.png)
+![App Screenshot 4](assets/Screenshot_5.png)
 
 # Reward Points Tracker 
 
@@ -39,16 +44,7 @@ This app allows:
 git clone https://github.com/Shubhangi-002/Reward-Points-Tracker.git
 cd Reward-Points-Tracker
 
-## Working App and Test case Screenshot
 
-
-![image](https://github.com/user-attachments/assets/6a344854-df95-4319-aca5-b36c4e9f1b89)
-
-
-![Alt text](assets/Screenshot1.png)
-![App Screenshot 2](assets/Screenshot_2.png)
-![App Screenshot 3](assets/Screenshot_3.png)
-![App Screenshot 4](assets/Screenshot_5.png)
 
 
 
