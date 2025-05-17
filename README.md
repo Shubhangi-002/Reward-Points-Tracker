@@ -4,6 +4,7 @@
 ![App Screenshot 2](assets/Screenshot_2.png)
 ![App Screenshot 3](assets/Screenshot_3.png)
 ![App Screenshot 4](assets/Screenshot_5.png)
+![image](https://github.com/user-attachments/assets/8b04e7f5-9465-4c3a-8902-21a07c358b75)
 
 # Reward Points Tracker 
 
