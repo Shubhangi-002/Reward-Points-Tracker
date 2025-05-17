@@ -40,7 +40,7 @@ cd Reward-Points-Tracker
 
 ## Working App and Test case Screenshot
 
-https://raw.githubusercontent.com/Shubhangi-002/Reward-Points-Tracker/refs/heads/main/assets/Screenshot_1.png
+![image](https://github.com/user-attachments/assets/b953616c-008a-4d4d-be8a-b58635859740)
 
 ![App Screenshot 2](assets/Screenshot_2.png)
 ![App Screenshot 3](assets/Screenshot_3.png)
