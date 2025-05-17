@@ -40,7 +40,8 @@ cd Reward-Points-Tracker
 
 ## Working App and Test case Screenshot
 
-![App Screenshot 2](assets/Screenshot1.png)
+
+![Alt text](assets/Screenshot1.png)
 ![App Screenshot 2](assets/Screenshot_2.png)
 ![App Screenshot 3](assets/Screenshot_3.png)
 ![App Screenshot 4](assets/Screenshot_5.png)
