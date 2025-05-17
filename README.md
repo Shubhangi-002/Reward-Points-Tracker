@@ -40,7 +40,7 @@ This app allows:
 
 ## Setup Instructions
 
-### 1. Clone the Repository
+### 1. Clone the Repository and run application
 ```bash
 git clone https://github.com/Shubhangi-002/Reward-Points-Tracker.git
 cd Reward-Points-Tracker
