@@ -4,3 +4,7 @@ export const MONTHS = Object.freeze([
 ]);
 
 export const YEARS = Object.freeze([2025, 2024, 2023, 2022, 2021]);
+
+export const CUSTOMER_HEADING = 'Customers'
+
+export const APPLICATION_TITLE = "Reward Points Tracker"

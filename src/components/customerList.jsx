@@ -1,17 +1,15 @@
-import { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
-import { TransactionContext } from '../context/transactionContext';
+import { useMemo } from 'react';
+import {CUSTOMER_HEADING} from '../constants/constants'
 
-function CustomerList() {
-  const { transactions, setSelectedCustomer, selectedCustomer } = useContext(TransactionContext);
-
+function CustomerList({ transactions, selectedCustomer, setSelectedCustomer }) {
   const customers = useMemo(() => {
-    return [...new Set(transactions.map(t => t.customerId))];
+    return [...new Set(transactions.map(transaction => transaction.customerId))];
   }, [transactions]);
 
   return (
     <div>
-      <h2>Customers</h2>
+      <h2>{CUSTOMER_HEADING}</h2>
       <ul>
         {customers.map(customer => (
           <li
@@ -27,6 +25,16 @@ function CustomerList() {
   );
 }
 
-CustomerList.propTypes = {};
+CustomerList.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      customerId: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      date: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  selectedCustomer: PropTypes.string,
+  setSelectedCustomer: PropTypes.func.isRequired,
+};
 
 export default CustomerList;

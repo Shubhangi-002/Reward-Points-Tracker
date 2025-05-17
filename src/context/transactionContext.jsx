@@ -1,7 +1,7 @@
 import { createContext, useState, useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
 import { fetchTransactions } from '../api/fetchTransactions';
-import { logger } from '../utils/logger';
+import { logger } from '../logger/logger';
 
 const TransactionContext = createContext();
 
@@ -21,7 +21,7 @@ export const TransactionProvider = ({ children }) => {
         setTransactions(data);
         logger.info("Transactions loaded", data);
       } catch (err) {
-        setError("Failed to load transactions");
+        setError(err.message || "Failed to load transactions");
         logger.error("Transaction fetch error:", err);
       } finally {
         setLoading(false);
@@ -57,6 +57,17 @@ export const TransactionProvider = ({ children }) => {
         setSelectedYear: updateSelectedYear
       }}
     >
+      {error && (
+        <div style={{
+          padding: '1rem',
+          marginBottom: '1rem',
+          backgroundColor: '#f44336',
+          color: 'white',
+          borderRadius: '5px',
+        }}>
+          {error}
+        </div>
+      )}
       {children}
     </TransactionContext.Provider>
   );

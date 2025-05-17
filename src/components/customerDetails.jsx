@@ -1,11 +1,9 @@
-import { useContext, useMemo } from 'react';
-import { TransactionContext } from '../context/transactionContext';
+import PropTypes from 'prop-types';
+import { useMemo } from 'react';
 import { calculateRewardPoints } from '../utils/rewardCalculator';
 import TransactionTable from './transactionTable';
 
-function CustomerDetails() {
-  const { transactions, selectedCustomer, selectedMonth } = useContext(TransactionContext);
-
+function CustomerDetails({ transactions, selectedCustomer, selectedMonth }) {
   const filtered = useMemo(() => {
     return transactions?.filter(t => t.customerId === selectedCustomer) || [];
   }, [transactions, selectedCustomer]);
@@ -15,22 +13,22 @@ function CustomerDetails() {
       monthlyPoints: {},
       totalPoints: 0,
     };
-  
+
     filtered.forEach(({ date, amount }) => {
       const parsedDate = new Date(date);
       const month = parsedDate.getMonth() + 1;
       const year = parsedDate.getFullYear();
       const points = calculateRewardPoints(amount);
-  
+
       const key = `${month}-${year}`;
       if (!result.monthlyPoints[key]) result.monthlyPoints[key] = 0;
       result.monthlyPoints[key] += points;
       result.totalPoints += points;
     });
-  
+
     return result;
   }, [filtered]);
-  
+
   if (!selectedCustomer) return null;
 
   return (
@@ -46,5 +44,17 @@ function CustomerDetails() {
     </div>
   );
 }
+
+CustomerDetails.propTypes = {
+  transactions: PropTypes.arrayOf(
+    PropTypes.shape({
+      customerId: PropTypes.string.isRequired,
+      amount: PropTypes.number.isRequired,
+      date: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  selectedCustomer: PropTypes.string,
+  selectedMonth: PropTypes.number,
+};
 
 export default CustomerDetails;

@@ -1,24 +1,21 @@
-import { useContext, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { TransactionContext } from '../context/transactionContext';
-import { MONTHS, YEARS } from '../constants/filters';
+import { MONTHS, YEARS } from '../constants/constants';
 
-function MonthFilter() {
-  const { setSelectedMonth, setSelectedYear } = useContext(TransactionContext);
-
-  const handleMonthChange = useCallback((e) => {
+function MonthFilter({ setSelectedMonth, setSelectedYear, selectedMonth, selectedYear }) {
+  const handleMonthChange = (e) => {
     const value = parseInt(e.target.value);
     setSelectedMonth(isNaN(value) ? null : value);
-  }, [setSelectedMonth]);
+  };
 
-  const handleYearChange = useCallback((e) => {
-    setSelectedYear(parseInt(e.target.value));
-  }, [setSelectedYear]);
+  const handleYearChange = (e) => {
+    const value = parseInt(e.target.value);
+    setSelectedYear(isNaN(value) ? null : value);
+  };
 
   return (
-    <div className='filter-controls'>
+    <div className="filter-controls">
       <label>Month: </label>
-      <select onChange={handleMonthChange}>
+      <select onChange={handleMonthChange} value={selectedMonth ?? ''}>
         <option value="">Select</option>
         {MONTHS.map((month, index) => (
           <option key={month} value={index}>{month}</option>
@@ -26,7 +23,8 @@ function MonthFilter() {
       </select>
 
       <label>Year: </label>
-      <select onChange={handleYearChange}>
+      <select onChange={handleYearChange} value={selectedYear ?? ''}>
+        <option value="">Select</option>
         {YEARS.map((year) => (
           <option key={year} value={year}>{year}</option>
         ))}
@@ -35,6 +33,11 @@ function MonthFilter() {
   );
 }
 
-MonthFilter.propTypes = {};
+MonthFilter.propTypes = {
+  setSelectedMonth: PropTypes.func.isRequired,
+  setSelectedYear: PropTypes.func.isRequired,
+  selectedMonth: PropTypes.number, 
+  selectedYear: PropTypes.number, 
+};
 
 export default MonthFilter;
