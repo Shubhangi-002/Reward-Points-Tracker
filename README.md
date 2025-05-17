@@ -44,7 +44,8 @@ This app allows:
 ```bash
 git clone https://github.com/Shubhangi-002/Reward-Points-Tracker.git
 cd Reward-Points-Tracker
-
+npm install
+npm run dev
 
 
 
