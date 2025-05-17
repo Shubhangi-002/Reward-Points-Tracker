@@ -41,6 +41,9 @@ cd Reward-Points-Tracker
 ## Working App and Test case Screenshot
 
 
+![image](https://github.com/user-attachments/assets/c404e4a0-f6e1-4992-b3f4-d57530d7f01c)
+
+
 ![Alt text](assets/Screenshot1.png)
 ![App Screenshot 2](assets/Screenshot_2.png)
 ![App Screenshot 3](assets/Screenshot_3.png)
