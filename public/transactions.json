@@ -12,6 +12,8 @@
     { "customerId": "C001", "transactionId": "T001", "amount": 120, "date": "2025-01-15" },
     { "customerId": "C001", "transactionId": "T001", "amount": 120, "date": "2025-01-15" },
     { "customerId": "C001", "transactionId": "T002", "amount": 90, "date": "2025-02-18" },
+    { "customerId": "C001", "transactionId": "T004", "amount": 50, "date": "2025-04-18" },
+
     { "customerId": "C001", "transactionId": "T003", "amount": 45, "date": "2025-03-03" },
     { "customerId": "C001", "transactionId": "T001", "amount": 120, "date": "2025-01-15" },
     { "customerId": "C001", "transactionId": "T002", "amount": 90, "date": "2025-02-18" },
