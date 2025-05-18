@@ -5,7 +5,7 @@ import TransactionTable from './transactionTable';
 
 function CustomerDetails({ transactions, selectedCustomer, selectedMonth }) {
   const filtered = useMemo(() => {
-    return transactions?.filter(t => t.customerId === selectedCustomer) || [];
+    return transactions?.filter(transaction => transaction.customerId === selectedCustomer) || [];
   }, [transactions, selectedCustomer]);
 
   const { monthlyPoints, totalPoints } = useMemo(() => {
